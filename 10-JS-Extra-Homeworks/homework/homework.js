@@ -43,6 +43,11 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  for(let i = 0; i < numero.length/2; i++){
+    if(numero[i] !== numero[numero.length - i])
+      return 'No es capicua';
+  }
+  return 'Es capicua';
 }
 
 
@@ -50,6 +55,15 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var cadmod = '';
+  for(let i = 0; i < cadena.length; i++){
+    if(cadena[i] === 'a' || cadena[i] === 'b' || cadena[i] === 'c'){
+      continue;
+    }
+    else
+      cadmod += cadena[i];
+  }
+  return cadmod;
 }
 
 
@@ -57,6 +71,16 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  var array = [arr[0]];
+  for(let i = 1; i < arr.length; i++){
+    for(let j = 0; j < array.length; j++){
+      if(arr[i].length > array[j].length)
+        continue;
+      else
+        array.splice(j, 0, array[j]);
+    }
+  }
+  return array;
 }
 
 
